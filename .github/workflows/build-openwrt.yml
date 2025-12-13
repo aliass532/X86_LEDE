@@ -46,6 +46,14 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       run: |
         #sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
+        echo "========== CPU信息 =========="
+        lscpu | grep -E "Model name|Core|CPU\(s\)"
+        echo -e "\n========== 内存信息 =========="
+        free -h
+        echo -e "\n========== 磁盘信息 =========="
+        df -h
+        echo -e "\n========== 系统版本 =========="
+        cat /etc/os-release | grep PRETTY_NAME
         sudo add-apt-repository ppa:longsleep/golang-backports -y
         sudo -E apt-get -qq update
         sudo -E apt install -y ack antlr3 asciidoc autoconf automake autopoint binutils bison build-essential \
