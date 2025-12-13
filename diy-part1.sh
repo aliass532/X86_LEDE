@@ -18,3 +18,5 @@
 #sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 #git clone https://github.com/aliass532/luci-app-eqos package/eqos
 #git clone https://github.com/aswifi/luci-theme-atmaterial_new package/luci-theme-atmaterial_new
+echo >> feeds.conf.default
+echo 'src-git modem https://github.com/FUjr/modem_feeds.git;main' >> feeds.conf.default
